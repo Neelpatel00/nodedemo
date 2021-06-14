@@ -2,6 +2,8 @@ var express = require('express')
  
 var app = express()
 
+const port = process.env.PORT || 3000;
+
 const ar = 
   {
     "sucess": 10,
@@ -29,4 +31,6 @@ app.get('/notes', function(req, res) {
   res.json({notes: "This is your notebook. Edit this to start saving your notes!"})
 })
  
-app.listen(3000)
+app.listen(port, () =>{
+  console.log('listening to the port no at ${port}');
+})
